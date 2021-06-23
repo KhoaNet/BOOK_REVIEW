@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+     include ./head
+  body
+    main.form-signin(style='text-align:center')
+        form(action="/register" method="POST")
+            h1.h3.mb-3.fw-normal Register
+            .form-floating
+            input#floatingInput.form-control(type='text' placeholder='Name' name="name" value="#{name ? name : ''}")
+            label(for='Name') Name
+            .form-floating
+            input#floatingInput.form-control(type='email' placeholder='Name@gmail.com' name="email" value="#{email ? email : ''}")
+            label(for='Email') Email
+            .form-floatingem
+            input#floatingInput.form-control(type='password' placeholder='Create Password' name="password" value="#{password ? password : ''}")
+            label(for='Password') Password
+            .form-floating
+            input#floatingPassword.form-control(type='password' placeholder='Confirm Password' name='password2' value="#{password2 ? password2 : ''}")
+            label(for='Confirm Password') Confirm Password
+            button.w-100.btn.btn-lg.btn-primary(type='submit').mt-3 Register
+            each e in errors
+                p(style="color:red").mt-5 #{e.msg} !
+            p.mt-5.mb-3.text-muted Have An Account? 
+            a(href="/login") Login
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous')            

@@ -1,0 +1,28 @@
+header.p-3.bg-dark.text-white
+  .container
+    .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+      a.d-flex.align-items-center.mb-2.mb-lg-0.text-white.text-decoration-none(href='/')
+       h1 Book Review
+      ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+        li
+          a.nav-link.px-2.text-secondary(href='/') Home
+        li
+          a.nav-link.px-2.text-white(href='/books') Books
+        li
+          a.nav-link.px-2.text-white(href='/geners') Genres
+        li
+          a.nav-link.px-2.text-white(href='/feedbacks') Feed Back
+        li
+          a.nav-link.px-2.text-white(href='/users') Users
+        li
+          a.nav-link.px-2.text-white(href='/publiser') Publisher
+      form.col-12.col-lg-auto.mb-3.mb-lg-0.me-lg-3
+      if user.permissions == 1
+        a Publiser: #{user.name}
+      if user.permissions == 2
+        a User: #{user.name}
+      if user.permissions == 0
+        a Admin: #{user.name}
+      .text-end
+        a.btn.btn-warning.me-2(role="button" href='/login/logout') Logout
+        //- a.btn.btn-warning(role="button" href='/register') Register

@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    .container
+        br
+        //- .row.col-md-1
+        //-     a(href='users/new') Create
+        br
+        .row
+            table.table.table-success.table-striped
+                thead
+                    tr
+                    th(scope='col') User name
+                    th(scope='col') Email
+                    th(scope='col') Create date
+                    th(scope='col') Handle
+                tbody
+                    each item in users
+                        tr
+                        td #{item.name}
+                        td #{item.email}
+                        td #{moment(item.date).format('DD-MM-YYYY')}
+                        td 
+                            a(href='users/edit/#{item._id}') Edit 
+                            //- span |
+                            //- a(href='users/delete/#{item._id}') Delete

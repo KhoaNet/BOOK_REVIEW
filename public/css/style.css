@@ -1,0 +1,81 @@
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  .rating {
+    display: flex;
+  }
+  .rating > label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    color: yellow; /* color browser dependent */
+    font-family: sans-serif;
+    opacity: 0.33;
+    transition: opacity .2s; /* OPTIONAL */
+  }
+  
+  #star-1:checked ~ label[for="star-1"],
+  #star-1:hover ~ label[for="star-1"],
+
+  #star-2:checked ~ label[for="star-1"],
+  #star-2:checked ~ label[for="star-2"],
+  #star-2:hover ~ label[for="star-1"],
+  #star-2:hover ~ label[for="star-2"],
+
+  #star-3:checked ~ label[for="star-1"],
+  #star-3:checked ~ label[for="star-2"],
+  #star-3:checked ~ label[for="star-3"],
+  #star-3:hover ~ label[for="star-1"],
+  #star-3:hover ~ label[for="star-2"],
+  #star-3:hover ~ label[for="star-3"],
+
+  #star-4:checked ~ label[for="star-1"],
+  #star-4:checked ~ label[for="star-2"],
+  #star-4:checked ~ label[for="star-3"],
+  #star-4:checked ~ label[for="star-4"],
+  #star-4:hover ~ label[for="star-1"],
+  #star-4:hover ~ label[for="star-2"],
+  #star-4:hover ~ label[for="star-3"],
+  #star-4:hover ~ label[for="star-4"],
+
+  #star-5:checked ~ label[for="star-1"],
+  #star-5:checked ~ label[for="star-2"],
+  #star-5:checked ~ label[for="star-3"],
+  #star-5:checked ~ label[for="star-4"],
+  #star-5:checked ~ label[for="star-5"],
+  #star-5:hover ~ label[for="star-1"],
+  #star-5:hover ~ label[for="star-2"],
+  #star-5:hover ~ label[for="star-3"],
+  #star-5:hover ~ label[for="star-4"],
+  #star-5:hover ~ label[for="star-5"] {
+    opacity: 1;
+  }

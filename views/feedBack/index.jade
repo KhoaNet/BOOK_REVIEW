@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    .container
+        br
+        .row.col-md-1
+            
+        br
+        .row
+            table.table.table-success.table-striped
+                thead
+                    tr
+                    th(scope='col') BookName
+                    th(scope='col') User Review
+                    th(scope='col') Rating
+                    th(scope='col') Created At
+                tbody
+                    each item in feedBacks
+                        tr
+                        td #{item.bookName}
+                        td #{item.userName}
+                        td #{item.rating} ⭐
+                        td #{moment(item.createdAt).format('DD-MM-YYYY')}

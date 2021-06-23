@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    .container
+            form.row.justify-content-md-center
+                //- input(type="hidden",name="_id",value="#{id}")
+                fieldset
+                    legend Edit Publisers
+                    .mb-3
+                        .col-md-6
+                            label.form-label(for='name') Name
+                            input.form-control(type='text' placeholder='name' name='name' value="#{ name? name:''}")
+                    .mb-3
+                        .col-md-6
+                            label.form-label(for='Email address') Email address
+                            input.form-control(type='email' placeholder='name@example.com' name='email'  value="#{email?email:''}")
+                    .mb-3
+                        <a href="/publiser">Cancel</a>

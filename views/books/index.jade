@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    .container
+            br
+            .row.col-md-1
+                a(href='books/new') Create
+            br
+            .row
+                table.table.table-success.table-striped
+                    thead
+                        tr
+                        th(scope='col') Title 
+                        //- th(scope='col') Geners 
+                        th(scope='col') Page Count
+                        th(scope='col') Create At
+                        th(scope='col') Handle
+                    tbody
+                        each item in books
+                            tr
+                            td #{item.title}
+                            td #{item.pageCount}
+                            td #{moment(item.createdAt).format('DD-MM-YYYY')}
+                            td 
+                                a(href='books/edit/#{item._id}') Edit 
+                                span |
+                                a(href='books/delete/#{item._id}' onclick="return confirm('Are you sure?')") Delete

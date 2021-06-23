@@ -1,0 +1,33 @@
+extends ../layout
+block content
+    .container
+        form(action='/books/edit' method='POST').row.justify-content-md-center
+            input(type="hidden",name="_id",value="#{book._id}")
+            fieldset
+                legend Edit Books
+                    .row.mb-3
+                        .col-md-6
+                            label.form-label(for='Title') Title
+                            input.form-control(type='text' placeholder='Title' name='title' value='#{book.title }' )
+                        .col-md-6
+                            label.form-label(for='Title') Genres
+                            select.form-select(aria-label='Default select example' name='gener' )
+                             each item in geners
+                                option(selected='' value="#{item._id}" name="genername"  ) #{item.genername}
+                    .row.mb-3
+                        .col-md-6
+                            label.form-label(for='Publish Date') Publish Date
+                            input.form-control(type='date' placeholder='Publish Date' name='publishDate' value="#{moment(book.publishDate).format('YYYY-MM-DD')}" )
+                        .col-md-6
+                            label.form-label(for='Page Count') Page Count
+                            input.form-control(type='number' min="1" placeholder='PageCount' name='pageCount' value='#{book.pageCount}'   )                            
+                    .row.mb-3
+                        .col-md-6
+                            label.form-label(for='Image') Image
+                            input.form-control(type='file' min="1" name="image" class="filepond" ) 
+                        .col-md-6
+                            label.form-label(for='Description') Description
+                            textarea.form-control(type='file' name='description' rows="39") #{book.description}                                   
+                    .mb-3
+                        <a href="/books">Cancel</a>
+                    button.btn.btn-primary(type='submit') Submit    

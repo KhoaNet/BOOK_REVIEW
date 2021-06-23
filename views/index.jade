@@ -1,0 +1,20 @@
+extends ./layout
+
+block content
+    #featured-3.container.px-4.py-5
+        form(action='/searchBook' method='POST').row
+            .col-md-2 
+                h2.pb-2 Books
+            .col-md-6
+                input.form-control.form-control-dark(type='search' placeholder='Book Name' aria-label='Search' name="bookName" required)
+            .col-md-4
+                button.btn.btn-primary(type='submit') Search Book
+        hr
+        .row  
+            .row.g-4.py-5.row-cols-1.row-cols-lg-3
+                each item in books
+                    .feature.col
+                        img(src='#{item.coverImagePath?item.coverImagePath:"/img/book.png"}' style="width:200px;height:200px")
+                        h3 #{item.title}
+                        a.icon-link(href='books/detail/#{item._id}')
+                            | Review            

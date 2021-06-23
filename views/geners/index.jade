@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    .container
+        br
+        .row.col-md-1
+            a(href='geners/new') Create
+        br
+        .row
+            table.table.table-success.table-striped
+                thead
+                    tr
+                    th(scope='col') Book genre name
+                    th(scope='col') Handle
+                tbody
+                    each item in geners
+                        tr
+                        td #{item.genername}
+                        td 
+                            a(href='geners/edit/#{item._id}') Edit 
+                            span |
+                            a(href='geners/delete/#{item._id}'  onclick="return confirm('Are you sure?')") Delete
