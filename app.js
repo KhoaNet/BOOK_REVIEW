@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const app = express()
 const port = process.env.PORT || 4000;
+const DB_URL = process.env.CONNECT_STRING || "mongodb://127.0.0.1:27017/bookReview"
 
 // Passport Config
 require('./config/passport')(passport);
@@ -52,7 +53,7 @@ app.locals.moment = require('moment');
 
 const mongoose = require('mongoose')
 //mongoose.connect("mongodb://127.0.0.1:27017/bookReview", { 
-mongoose.connect("mongodb://daniel-khoa:e9n3hQqx0nPmk5eXcJcSUq0jzB3YWkzHBLZUgckjDa50ABBaY8XSS6d7Xx2ZiJD0xiAgqKdfimBBpzgVoyVusQ==@daniel-khoa.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@daniel-khoa@", { 
+mongoose.connect(DB_URL, { 
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
