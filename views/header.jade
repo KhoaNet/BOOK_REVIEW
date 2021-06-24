@@ -6,16 +6,18 @@ header.p-3.bg-dark.text-white
       ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
         li
           a.nav-link.px-2.text-secondary(href='/') Home
-        li
-          a.nav-link.px-2.text-white(href='/books') Books
-        li
-          a.nav-link.px-2.text-white(href='/geners') Genres
-        li
-          a.nav-link.px-2.text-white(href='/feedbacks') Feed Back
-        li
-          a.nav-link.px-2.text-white(href='/users') Users
-        li
-          a.nav-link.px-2.text-white(href='/publiser') Publisher
+        if user.permissions == 1 || user.permissions == 0
+          li
+            a.nav-link.px-2.text-white(href='/books') Books
+          li
+            a.nav-link.px-2.text-white(href='/geners') Genres
+          li
+            a.nav-link.px-2.text-white(href='/feedbacks') Feed Back
+          li
+            a.nav-link.px-2.text-white(href='/users') Users
+          if user.permissions == 0
+            li
+              a.nav-link.px-2.text-white(href='/publiser') Publisher
       form.col-12.col-lg-auto.mb-3.mb-lg-0.me-lg-3
       if user.permissions == 1
         a Publiser: #{user.name}

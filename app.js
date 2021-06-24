@@ -51,7 +51,8 @@ app.locals._.str  = require('underscore.string');
 app.locals.moment = require('moment');
 
 const mongoose = require('mongoose')
-mongoose.connect("mongodb://127.0.0.1:27017/bookReview", { 
+//mongoose.connect("mongodb://127.0.0.1:27017/bookReview", { 
+mongoose.connect("mongodb://daniel-khoa:e9n3hQqx0nPmk5eXcJcSUq0jzB3YWkzHBLZUgckjDa50ABBaY8XSS6d7Xx2ZiJD0xiAgqKdfimBBpzgVoyVusQ==@daniel-khoa.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@daniel-khoa@", { 
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
