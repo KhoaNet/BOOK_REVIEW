@@ -9,7 +9,6 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 router.get('/',ensureAuthenticated, async (req, res) => {
   try {
     const books = await Book.find({});
-    console.log("a",);
     res.render('index', {
       books: books,
       user:req.session.passport.user,
