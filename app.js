@@ -7,7 +7,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const app = express()
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // Passport Config
 require('./config/passport')(passport);
