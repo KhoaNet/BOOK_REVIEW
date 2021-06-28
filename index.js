@@ -58,6 +58,9 @@ mongoose.connect(DB_URL, {
     useUnifiedTopology: true
 })
 
+console.log('Port:'+port);
+console.log('Mongo:'+DB_URL);
+
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected Mongodb'))
